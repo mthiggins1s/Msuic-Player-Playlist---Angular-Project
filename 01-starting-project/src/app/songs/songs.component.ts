@@ -13,4 +13,13 @@ const randomIndex = Math.floor(Math.random() * songs_list.length)
 })
 export class SongsComponent {
   selectedSong = songs_list[randomIndex];
+
+  get imagePath() {
+    return 'assets/songs/' + this.selectedSong.avatar
+  }
+
+  onSelectSong() {
+    const randomIndex = Math.floor(Math.random() * songs_list.length)
+    this.selectedSong = songs_list[randomIndex];
+  }
 }
