@@ -1,8 +1,4 @@
-import { Component } from '@angular/core';
-
-import { songs_list } from '../song-list';
-
-const randomIndex = Math.floor(Math.random() * songs_list.length)
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-songs',
@@ -12,14 +8,14 @@ const randomIndex = Math.floor(Math.random() * songs_list.length)
   styleUrl: './songs.component.css'
 })
 export class SongsComponent {
-  selectedSong = songs_list[randomIndex];
+ @Input() avatar!: string;
+ @Input() name!: string;
 
   get imagePath() {
-    return 'assets/songs/' + this.selectedSong.avatar
+    return 'assets/songs/' + this.avatar;
   }
 
   onSelectSong() {
-    const randomIndex = Math.floor(Math.random() * songs_list.length)
-    this.selectedSong = songs_list[randomIndex];
+
   }
 }

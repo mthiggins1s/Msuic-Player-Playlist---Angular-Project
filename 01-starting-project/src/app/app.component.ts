@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { SongsComponent } from "./songs/songs.component";
+import { songs_list } from './song-list';
 
 // Decorator; TS feature that adds metadata to the class.
 @Component({
@@ -11,4 +12,6 @@ import { SongsComponent } from "./songs/songs.component";
   styleUrl: './app.component.css',
 })
 // class named AppComponent; being imported and passed to the bootstrapApplication.
-export class AppComponent {}
+export class AppComponent {
+  songs = songs_list;
+}
