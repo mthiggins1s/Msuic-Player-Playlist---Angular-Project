@@ -39,3 +39,37 @@ div {
     font-size: 0.8rem;
     font-weight: normal;
   }
+
+/* Container for the button and the right-side window */
+.songs-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Right-side window for song details */
+.song-details {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20rem;
+  height: 100%;
+  background-color: #282828;
+  color: #fff;
+  padding: 1rem;
+  box-shadow: -4px 0 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Style for the song image */
+.song-image {
+  width: 80%;
+  max-width: 15rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  margin-top: 1rem;
+}

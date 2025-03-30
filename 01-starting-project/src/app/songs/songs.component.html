@@ -1,8 +1,12 @@
-<div>
+<div class="songs-container">
   <button (click)="onSelectSong()">
     <img [src]="imagePath" [alt]="name" />
     <span>{{ name }}</span>
   </button>
 </div>
 
-<p *ngIf="selectedSong" class="song-message">{{ selectedSong }}</p>
+<!-- Right-side window for the song image -->
+<div *ngIf="selectedSong" class="song-details">
+  <h3>{{ selectedSong }}</h3>
+  <img [src]="imagePath" [alt]="selectedSong" class="song-image" />
+</div>

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output, output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-songs',
@@ -9,12 +9,11 @@ import { Component, EventEmitter, Input, Output, output } from '@angular/core';
   styleUrl: './songs.component.css'
 })
 export class SongsComponent {
-  @Input({required: true}) id!: string;
-  @Input({required: true}) avatar!: string;
-  @Input({required: true}) name!: string;
-  // allows us to emit custom values through the select property to any parent component that wants it.
-  @Output() select = new EventEmitter(); 
+  @Input({ required: true }) id!: string;
+  @Input({ required: true }) avatar!: string;
+  @Input({ required: true }) name!: string;
 
+  @Output() select = new EventEmitter<string>();
 
   selectedSong: string | null = null; // Holds the selected song name
 
@@ -23,7 +22,8 @@ export class SongsComponent {
   }
 
   onSelectSong() {
-    this.selectedSong = `You selected the song: ${this.name}`;
-    this.select.emit(this.id);
+    // Directly set the selected song name
+    this.selectedSong = this.name;
+    this.select.emit(this.id); // Emit the song ID if needed
   }
 }
