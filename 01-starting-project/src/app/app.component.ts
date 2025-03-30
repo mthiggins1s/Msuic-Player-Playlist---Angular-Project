@@ -14,4 +14,8 @@ import { songs_list } from './song-list';
 // class named AppComponent; being imported and passed to the bootstrapApplication.
 export class AppComponent {
   songs = songs_list;
+
+  onSelectedSong(id: string) {
+    console.log('Selected song with id '+ id);
+  }
 }

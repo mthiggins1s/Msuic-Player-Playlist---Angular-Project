@@ -3,22 +3,52 @@
 <main>
   <ul id="songs">
     <li>
-      <app-songs [avatar]="songs[0].avatar" [name]="songs[0].name" />
+      <app-songs
+        [id]="songs[0].id"
+        [avatar]="songs[0].avatar"
+        [name]="songs[0].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
     <li>
-      <app-songs [avatar]="songs[1].avatar" [name]="songs[1].name" />
+      <app-songs
+        [id]="songs[1].id"
+        [avatar]="songs[1].avatar"
+        [name]="songs[1].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
     <li>
-      <app-songs [avatar]="songs[2].avatar" [name]="songs[2].name" />
+      <app-songs
+        [id]="songs[2].id"
+        [avatar]="songs[2].avatar"
+        [name]="songs[2].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
     <li>
-      <app-songs [avatar]="songs[3].avatar" [name]="songs[3].name" />
+      <app-songs
+        [id]="songs[3].id"
+        [avatar]="songs[3].avatar"
+        [name]="songs[3].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
     <li>
-      <app-songs [avatar]="songs[4].avatar" [name]="songs[4].name" />
+      <app-songs
+        [id]="songs[4].id"
+        [avatar]="songs[4].avatar"
+        [name]="songs[4].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
     <li>
-      <app-songs [avatar]="songs[5].avatar" [name]="songs[5].name" />
+      <app-songs
+        [id]="songs[5].id"
+        [avatar]="songs[5].avatar"
+        [name]="songs[5].name"
+        (select)="onSelectedSong($event)"
+      />
     </li>
   </ul>
 </main>
