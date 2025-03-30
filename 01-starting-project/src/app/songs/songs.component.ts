@@ -16,6 +16,6 @@ export class SongsComponent {
   }
 
   onSelectSong() {
-
+    alert(`You have selected the song: ${this.name}`);
   }
 }
