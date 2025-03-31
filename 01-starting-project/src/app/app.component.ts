@@ -2,20 +2,21 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from './header/header.component';
 import { SongsComponent } from "./songs/songs.component";
 import { songs_list } from './song-list';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
-// Decorator; TS feature that adds metadata to the class.
 @Component({
-  selector: 'app-root', // tells Angular what elements it should look for in the HTML file to it can replace it with markup.
+  selector: 'app-root',
   standalone: true,
-  imports: [HeaderComponent, SongsComponent],
+  imports: [HeaderComponent, SongsComponent, FormsModule, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
-// class named AppComponent; being imported and passed to the bootstrapApplication.
 export class AppComponent {
   songs = songs_list;
+  selectedSongId: string | null = null;
 
   onSelectedSong(id: string) {
-    console.log('Selected song with id '+ id);
+    this.selectedSongId = id; // Update the selected song ID
   }
 }

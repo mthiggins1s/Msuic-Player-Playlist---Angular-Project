@@ -12,18 +12,19 @@ export class SongsComponent {
   @Input({ required: true }) id!: string;
   @Input({ required: true }) avatar!: string;
   @Input({ required: true }) name!: string;
+  @Input() selectedSongId!: string | null; // Input to receive the selected song ID
 
   @Output() select = new EventEmitter<string>();
-
-  selectedSong: string | null = null; // Holds the selected song name
 
   get imagePath() {
     return 'assets/songs/' + this.avatar;
   }
 
+  get isSelected() {
+    return this.id === this.selectedSongId; // Check if this song is selected
+  }
+
   onSelectSong() {
-    // Directly set the selected song name
-    this.selectedSong = this.name;
-    this.select.emit(this.id); // Emit the song ID if needed
+    this.select.emit(this.id); // Emit the song ID to the parent
   }
 }
